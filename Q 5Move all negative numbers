@@ -1,0 +1,23 @@
+//Move all negative numbers to beginning and positive to end with constant extra space
+public class moveright{
+    public static void main(String args[]){
+        int a[]={-2,34,2,13,-24,3,34,5,-6,-223,-1,-32,3,-4,32,345,-1};
+        for(int i=0;i<a.length;i++){
+            for(int j=i+1;j<a.length;j++){
+                if(a[i]<0){
+                    int temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                    
+                    
+                }
+                
+            }
+        }
+        for(int k=0;k<a.length;k++){
+            System.out.print(a[k]+" ");
+        }
+        
+        
+    }
+}

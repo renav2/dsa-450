@@ -1,0 +1,90 @@
+public class ab{
+    static link head;
+     private static class link{
+         private int data;
+         private link next;
+         public link(int data){
+             this.data=data;
+             this.next=null;
+             
+             
+         }
+     }
+     void add(int pos,int data){
+         link node=new link(data);
+         
+         
+         if(pos==1){
+             node.next=head;
+             head=node;
+             
+         }else{
+             int count=1;
+             link prev=head;
+             while(count<pos-1){
+                 prev=prev.next;
+                 count++;
+                 
+                 
+             }
+             link temp=prev.next;
+             prev.next=node;
+             node.next=temp;
+             
+             
+         }
+         
+         
+     }
+     void show(){
+         link temp=head;
+         while(temp!=null){
+             System.out.print(temp.data+"->");
+             temp=temp.next;
+             
+         }
+         
+     }
+     void sort(){
+         link curr=head;
+         link index=null;
+         int temp;
+         
+         
+         while(curr!=null){
+             index=curr.next;
+             while(index!=null){
+                 
+                 if(curr.data>index.data){
+                     temp=curr.data;
+                     curr.data=index.data;
+                     index.data=temp;
+                 }index=index.next;
+             }curr=curr.next;
+             
+         }
+         
+         
+         
+     }
+     
+   
+     
+    
+    
+    public static void main(String args[]){
+        ab obj=new ab();
+        obj.add(1,919);
+         obj.add(2,129);
+         obj.add(3,9); 
+         obj.add(4,19);
+         obj.add(5,99);
+         obj.show();
+       
+         obj.sort();
+         obj.show();
+         
+        
+        
+    }
+}

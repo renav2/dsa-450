@@ -1,0 +1,34 @@
+//inter section in 2 two array
+import java.util.*;
+public class in{
+    public static void main(String args[]){
+        Integer a[]={1,2,3,4};
+        Integer b[]={1,32,3,64};
+    //    intersection op->1,3
+    System.out.println("inter section");
+      for(int i=0;i<a.length;i++){
+          for(int j=0;j<a.length;j++){
+              if(a[i]==b[j]){
+                  System.out.print(b[j]+" ");
+              }
+          }
+      } 
+      //union
+      //no never repet
+      System.out.println(" ");
+      System.out.println("union opration ");
+      HashSet<Integer>map = new HashSet<Integer>(); 
+       for(int i=0;i<a.length;i++){
+      map.add(a[i]);
+       }
+       for(int j=0;j<b.length;j++){
+    map.add(b[j]);
+           
+       }
+       
+      System.out.println(map);
+      
+     
+        
+    }
+}

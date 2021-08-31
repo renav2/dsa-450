@@ -1,0 +1,175 @@
+//link list all opration like 
+// 1)inser
+// 2)add node front end any loc 
+// 3)find node present in link list or not
+// 4)delete node from link list 
+// 5)reverse link list
+// 6)sort link list 
+// 7)print link list
+public class op{
+    static link head;
+   
+    private static  class link {
+        private int data;
+        private link next;
+        
+        
+         public link(int data){
+        this.data=data;
+        this.next=null;
+        
+        
+    }
+    }
+    
+// 1)inser
+// 2)add node front end any loc 
+    void in(int pos,int data){
+        link node=new link(data);
+        if(pos==1){
+            node.next=head;
+            head=node;
+            
+        }else{
+            int count=1;
+            link prev=head;
+            while(count<pos-1){
+                prev=prev.next;
+                count++;
+                
+            }
+            link temp=prev.next;
+            prev.next=node;
+            node.next=temp;
+            
+            
+            
+        }
+        
+    }
+    void dlt(int pos){
+        if(pos==1){
+            head=head.next;
+            
+        }
+        else{
+             int count=1;
+            link prev=head;
+            while(count<pos-1){
+                prev=prev.next;
+                count++;
+                
+            }
+            link temp=prev.next;
+            prev.next=temp.next;
+            
+        }
+            
+        }
+        
+       void rev(link head){
+           link curr=head;
+           link prev=null;
+           link next=null;
+           while(curr!=null){
+               next=curr.next;
+               curr.next=prev;
+               prev=curr;
+               curr=next;
+               
+               
+           }
+           
+           while(prev!=null){
+               System.out.print(" "+prev.data);
+               prev= prev.next;
+               
+           }
+           
+           
+       } 
+    
+    
+    void pre(int key){
+     link temp=head;
+    if(temp==null){
+        System.out.println("link list is empty");
+    }else{
+    while(temp!=null){
+      if(temp.data==key){
+          System.out.println(key+" is present in the link list");
+          break;
+          
+      }
+        temp=temp.next;
+        
+    }
+    }
+    }
+        
+        
+    
+    
+    void show(){
+    link temp=head;
+    if(temp==null){
+        System.out.println("link list is empty");
+    }
+    else{
+        
+    while(temp!=null){
+        System.out.print(temp.data+"->");
+        temp=temp.next;
+        
+    }
+    }    
+        
+    }
+    void sort(){
+    link curr=head;
+    
+        link index=null;
+    int temp;
+    while(curr!=null){
+        index=index.next;
+        while(index!=null){
+            if(curr.data>index.data){
+            temp=curr.data;
+            curr.data=index.data;
+            index.data=temp;
+                
+                
+            }index=index.next;
+            
+            
+            
+        
+    }curr=curr.next;
+    
+        
+    }
+        
+    }
+    
+    
+    
+    public static void main(String args[]){
+    op obj=new op();
+    obj.in(1,99);
+     obj.in(2,19);
+     obj.in(3,32);
+     obj.in(4,12);
+     obj.in(5,2);
+     obj.in(6,92);
+        obj.show();
+        System.out.println("");
+       obj.pre(19);
+      System.out.println("\ndlt node ");
+        obj.dlt(2);
+        obj.show();
+         System.out.println("\n\nreverse link list");
+        obj.rev(head);
+        
+    }
+}
+

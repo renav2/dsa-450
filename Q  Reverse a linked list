@@ -1,0 +1,85 @@
+public class ab{
+    static link head;
+     private static class link{
+         private int data;
+         private link next;
+         public link(int data){
+             this.data=data;
+             this.next=null;
+             
+             
+         }
+     }
+     void add(int pos,int data){
+         link node=new link(data);
+         
+         
+         if(pos==1){
+             node.next=head;
+             head=node;
+             
+         }else{
+             int count=1;
+             link prev=head;
+             while(count<pos-1){
+                 prev=prev.next;
+                 count++;
+                 
+                 
+             }
+             link temp=prev.next;
+             prev.next=node;
+             node.next=temp;
+             
+             
+         }
+         
+         
+     }
+     void show(){
+         link temp=head;
+         while(temp!=null){
+             System.out.print(temp.data+"->");
+             temp=temp.next;
+             
+         }
+         
+     }
+     
+     void rev(link head){
+         link curr=head;
+         link next=null;
+         link prev=null;
+         while(curr!=null){
+         next=curr.next;
+         curr.next=prev;
+         prev=curr;
+         curr=next;
+             
+             
+         }
+         while(prev!=null){
+             System.out.print("<-"+prev.data);
+             prev=prev.next;
+             
+         }
+         
+     }
+     
+    
+    
+    public static void main(String args[]){
+        ab obj=new ab();
+        obj.add(1,919);
+         obj.add(2,129);
+         obj.add(3,9); 
+         obj.add(4,19);
+         obj.add(5,99);
+         obj.show();
+         System.out.println("revere link list");
+         obj.rev(head);
+         
+        
+        
+    }
+}

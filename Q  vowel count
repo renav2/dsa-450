@@ -1,0 +1,18 @@
+import java.util.*;
+public class ab{
+    public static void main(String args[]){
+        String a="renav";
+        int count=0;
+        char arr[]=a.toCharArray();
+        for(int i=0;i<arr.length;i++){
+          if(arr[i]=='a'||arr[i]=='e'||arr[i]=='i'||arr[i]=='o'||arr[i]=='u')
+            {
+                count++;
+                
+            }
+        }
+        System.out.println(count);
+        
+    }
+    
+}

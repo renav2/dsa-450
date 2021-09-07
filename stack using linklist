@@ -1,0 +1,54 @@
+import java.util.*;
+public class ab{
+    static link top;
+    private int length;
+    private  static class link{
+        private int data;
+        private link next;
+        public link(int data){
+            this.data=data;
+            
+        }
+    }
+    void stack(){
+        top=null;
+        length=0;
+        
+        
+    }
+    void push(int data){
+        link temp=new link(data);
+        temp.next=top;
+        top=temp;
+        length++;
+    }
+    void pop(){
+        if(top==null){
+            System.out.println("stack is empty");
+        }else{
+            int res=top.data;
+            top=top.next;
+            length--;
+            System.out.println("the elemnt pop from  the op " +res);
+            
+        }
+    }
+    void peek(){
+        System.out.println("new top -> "+top.data);
+    }
+    
+    public static void main(String args[]){
+        ab obj=new ab();
+        obj.push(20);
+         obj.push(10);
+         obj.push(30);
+         //obj.push(90);
+        obj.peek();
+        System.out.println("");
+        obj.pop();
+        obj.peek();
+        
+        
+        
+    }
+}
